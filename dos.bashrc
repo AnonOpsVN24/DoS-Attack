@@ -206,6 +206,6 @@ ____       ____
   ;;
 
   *)
-   echo Command not found
+   echo Command not found 
    exit 1
 esac
