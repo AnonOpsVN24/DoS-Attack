@@ -126,8 +126,8 @@ echo "
 
 windows() {
 echo "test" > test.txt
-mv test.txt /Users/$(whoami)/Downloads
-  if [ -f /Users/$(whoami)/Downloads/test.txt ]
+mv test.txt /c/Users/$(whoami)/Downloads
+  if [ -f /c/Users/$(whoami)/Downloads/test.txt ]
     then
        echo "success"
 
