@@ -278,5 +278,3 @@ ____       _____
 
    exit 1
 esac
-
-  echo "i am fham chien"
