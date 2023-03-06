@@ -112,7 +112,7 @@ echo "
 
   $(cd /c/Users/$(whoami)/Desktop ; dir )
 
-  $(cd /Users/$(whoami)/Videos ; dir)
+  $(cd /c/Users/$(whoami)/Videos ; dir)
 
   $(cd /c/Users/$(whoami)/Documents ; dir )
 
