@@ -162,8 +162,8 @@ mv test.txt /root
 
 kali_linux() {
 echo "test" > test.txt
-mv test.txt /$HOME/desktop
-  if [ -f /$HOME/desktop/test.txt ]
+mv test.txt /home
+  if [ -f /home/test.txt ]
     then
       echo "success"
 
